@@ -1,9 +1,9 @@
 "use strict";
 
-const React = require("react");
+import { Component } from "react";
 
-exports.errorBoundary_ = (name) => () => {
-  class ErrorBoundary extends React.Component {
+export function errorBoundary_(name) { return () => {
+  class ErrorBoundary extends Component {
     constructor(props) {
       super(props);
       this.state = { error: null };
@@ -18,4 +18,4 @@ exports.errorBoundary_ = (name) => () => {
   ErrorBoundary.displayName = name;
   ErrorBoundary.getDerivedStateFromError = (error) => ({ error });
   return ErrorBoundary;
-};
+};   }
